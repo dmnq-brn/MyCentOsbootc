@@ -15,11 +15,13 @@ cp -avf "/ctx/system_files"/. /
 # this installs a package from fedora repos
 # dnf5 install -y tmux
 dnf -y --setopt=install_weak_deps=False group install GNOME
-dnf -y install git-core git-core-doc hunspell.x86_64 iw iwlwifi-dvm-firmware.noarch iw.x86_64 iwlwifi-mvm-firmware.noarch kernel-modules-extra.x86_64 \
-wpa_supplicant.x86_64
+dnf -y install NetworkManager-openconnect.x86_64 NetworkManager-openconnect-gnome.x86_64 NetworkManager-openvpn.x86_64 NetworkManager-openvpn-gnome.x86_64 \
+NetworkManager-wifi.x86_64 audit.x86_64 bpftool.x86_64 dnsmasq.x86_64 firewalld.noarch \
+git-core.x86_64 git-core-doc.noarch hunspell.x86_64 hunspell-fr.noarch \
+iw iwlwifi-dvm-firmware.noarch iw.x86_64 iwlwifi-mvm-firmware.noarch kernel-modules-extra.x86_64
 dnf -y remove gnome-calculator.x86_64 gnome-characters.x86_64 gnome-clocks.x86_64 gnome-color-manager.x86_64 \
 gnome-font-viewer.x86_64 gnome-remote-desktop.x86_64 gnome-system-monitor.x86_64 \
-gnome-text-editor.x86_64 gnome-tour.x86_64 gnome-user-docs.noarch sane-backends.x86_64
+gnome-text-editor.x86_64 gnome-tour.x86_64 gnome-user-docs.noarch sane-backends.x86_64 loupe.x86_64
 
 # Use a COPR Example:
 #
