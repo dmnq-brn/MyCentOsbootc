@@ -30,7 +30,7 @@ gnome-font-viewer.x86_64 gnome-remote-desktop.x86_64 gnome-system-monitor.x86_64
 gnome-text-editor.x86_64 gnome-tour.x86_64 gnome-user-docs.noarch sane-backends.x86_64 loupe.x86_64 subscription-manager.x86_64
 
 # intall podman-compose
-pip3 install podman-compose
+# pip3 install podman-compose
 
 # Use a COPR Example:
 #
