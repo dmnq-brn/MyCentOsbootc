@@ -20,7 +20,7 @@ dnf -y --setopt=install_weak_deps=False install NetworkManager-wifi PackageKit-c
     centos-backgrounds dconf dnsmasq firewalld.noarch fprintd-pam git-core git-core-doc gdm glib-networking  glibc-all-langpacks gnome-bluetooth gnome-browser-connector  \
     gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-initial-setup gnome-session-wayland-session gnome-settings-daemon \
     gnome-shell gnome-shell-extension-background-logo gnome-software gvfs-fuse gvfs-goa gvfs-gphoto2 gvfs-mtp gvfs-smb iw iwlwifi-dvm-firmware.noarch \
-    iw.x86_64 iwlwifi-mvm-firmware.noarchlibcanberra-gtk3 librsvg2 mesa-dri-drivers mesa-vulkan-drivers nautilus nfs-utils orca plymouth-system-theme polkit ptyxis rsync \
+    iw.x86_64 iwlwifi-mvm-firmware libcanberra-gtk3 librsvg2 mesa-dri-drivers mesa-vulkan-drivers nautilus orca plymouth-system-theme polkit ptyxis rsync realmd \
     smartmontools.x86_64 snapshot tracker tracker-miners xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-user-dirs-gtk yelp-tools vim-enhanced.x86_64
 
 # Fonts
@@ -31,7 +31,7 @@ dnf -y --setopt=install_weak_deps=False install default-fonts-cjk-mono default-f
    redhat-display-vf-fonts redhat-mono-vf-fonts redhat-text-vf-fonts
 
 # Guest Desktop Agents
-dnf -y --setopt=install_weak_deps=False install hyperv-daemons.x86_64 open-vm-tools.x86_64 open-vm-tools-desktop.x86_64 qemu-guest-agent.x86_64 realmd.x86_64
+dnf -y --setopt=install_weak_deps=False install hyperv-daemons open-vm-tools-desktop qemu-guest-agent spice-vdagent
 
 # shall be installed from EPEL repository to be added later
 # dnf -y install NetworkManager-openconnect.x86_64 NetworkManager-openconnect-gnome.x86_64 NetworkManager-openvpn.x86_64 NetworkManager-openvpn-gnome.x86_64
