@@ -70,7 +70,7 @@ FEDORA_PACKAGES=(
 
 )
 
-FONTS=(
+FONTS_PACKAGES=(
     default-fonts-cjk-mono
     default-fonts-cjk-sans
     default-fonts-cjk-serif
@@ -108,8 +108,8 @@ GUEST_DESKTOP_AGENTS=(
 )
 
 # Install all packages
-echo "Installing ${#PACKAGES[@]} packages from repos..."
-dnf -y --setopt=install_weak_deps=False install "${SHARED_PACKAGES[@]}" "${GUEST_DESKTOP_AGENTS[@]}" "${FONTS[@]}"
+echo "Installing ${#SHARED_PACKAGES[@]} packages from repos..."
+dnf -y --setopt=install_weak_deps=False install "${SHARED_PACKAGES[@]}" "${GUEST_DESKTOP_AGENTS[@]}" "${FONTS_PACKAGES[@]}"
 
 # shall be installed from EPEL repository to be added later
 # dnf -y install NetworkManager-openconnect.x86_64 NetworkManager-openconnect-gnome.x86_64 NetworkManager-openvpn.x86_64 NetworkManager-openvpn-gnome.x86_64
