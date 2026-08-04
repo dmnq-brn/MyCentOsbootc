@@ -103,6 +103,22 @@ GUEST_DESKTOP_AGENTS=(
 echo "Installing ${#PACKAGES[@]} packages from repos..."
 dnf -y --setopt=install_weak_deps=False install "${PACKAGES[@]}" "${GUEST_DESKTOP_AGENTS[@]}" "${FONTS[@]}"
 
+# shall be installed from EPEL repository to be added later
+# dnf -y install NetworkManager-openconnect.x86_64 NetworkManager-openconnect-gnome.x86_64 NetworkManager-openvpn.x86_64 NetworkManager-openvpn-gnome.x86_64
+
+# useful for secure archive.
+# dnf -y install restic.x86_64 
+
+# intall podman-compose
+# pip3 install podman-compose
+
+# Use a COPR Example:
+#
+# dnf5 -y copr enable ublue-os/staging
+# dnf5 -y install package
+# Disable COPRs so they don't end up enabled on the final image:
+# dnf5 -y copr disable ublue-os/staging
+
 # Packages to exclude - common to all versions
 EXCLUDED_PACKAGES=(
     cosign
