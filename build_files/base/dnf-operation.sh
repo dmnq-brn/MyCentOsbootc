@@ -3,7 +3,7 @@ set -ouex pipefail
 # All DNF-related operations should be done here whenever possible
 
 # Base packages from repos - common to all versions
-PACKAGES=(
+SHARED_PACKAGES=(
     # Gnome minimal desktop
     NetworkManager-wifi
     PackageKit-command-not-found
@@ -14,7 +14,6 @@ PACKAGES=(
     avahi
     avahi-tools
     bpftool
-    centos-backgrounds
     dconf
     dnsmasq
     firewalld.noarch
@@ -62,6 +61,15 @@ PACKAGES=(
     vim-enhanced
 )
 
+# centos specific packages
+CENTOS_PACKAGES=(
+    centos-backgrounds
+)
+
+FEDORA_PACKAGES=(
+
+)
+
 FONTS=(
     default-fonts-cjk-mono
     default-fonts-cjk-sans
@@ -101,7 +109,7 @@ GUEST_DESKTOP_AGENTS=(
 
 # Install all packages
 echo "Installing ${#PACKAGES[@]} packages from repos..."
-dnf -y --setopt=install_weak_deps=False install "${PACKAGES[@]}" "${GUEST_DESKTOP_AGENTS[@]}" "${FONTS[@]}"
+dnf -y --setopt=install_weak_deps=False install "${SHARED_PACKAGES[@]}" "${GUEST_DESKTOP_AGENTS[@]}" "${FONTS[@]}"
 
 # shall be installed from EPEL repository to be added later
 # dnf -y install NetworkManager-openconnect.x86_64 NetworkManager-openconnect-gnome.x86_64 NetworkManager-openvpn.x86_64 NetworkManager-openvpn-gnome.x86_64
@@ -129,7 +137,6 @@ EXCLUDED_PACKAGES=(
     firefox-langpacks
     gnome-extensions-app
     gnome-shell-extension-background-logo
-    gnome-software
     gnome-software-rpm-ostree
     gnome-terminal-nautilus
     podman-docker
